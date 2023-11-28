@@ -1,0 +1,237 @@
+:root {
+    --violeta: #c38eb4;
+    --moradogris: #E1CBD7;
+    --azulclaro: #86a8cf;
+    --azuloscuro: #26425A;
+    --moradooscuro: #2b124c;
+}
+
+
+#contenedor {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo titulo"
+        "ahorcado ahorcado ranking"
+        "palabra palabra ranking"
+        "ABC ABC ABC";
+    grid-template-rows: 10% 60% 10% auto;
+    grid-template-columns: 40% 40% 20%;
+    height: 100vh;
+}
+
+.boton {
+    background-color: #ff4081;
+    /* Color base */
+    color: #fff;
+    /* Texto sobre el fondo */
+    border: 2px solid #ffc107;
+    border-radius: 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 8px 12px;
+    margin: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #ffd54f;
+    /* Color al pasar el mouse */
+    border-color: #ff4081;
+}
+
+
+
+#confeti {
+    position: absolute;
+    opacity: 0.7;
+    display: none;
+    width: 100%;
+
+}
+
+#perdedor {
+    background-color: red;
+    position: absolute;
+    opacity: 0.7;
+    display: none;
+    width: 100%;
+}
+
+
+#titulo {
+    grid-area: titulo;
+    font-family: monospace;
+    font-size: 50px;
+    background-color: var(--azulclaro);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#ahorcado {
+    grid-area: ahorcado;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#palabra {
+    grid-area: palabra;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#ranking {
+    grid-area: ranking;
+    background-color: var(--azuloscuro);
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+#ABC {
+    grid-area: ABC;
+    background-color: var(--moradooscuro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.letras {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: x-large;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid white;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: white;
+
+}
+
+.letras:hover {
+    background-color: #86a8cf;
+    color: var(--azuloscuro);
+}
+
+@keyframes moverBorde {
+    0% {
+        border-left-width: 5px;
+        border-top-width: 2px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+
+    }
+
+    25% {
+        border-left-width: 1px;
+        border-top-width: 5px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+    }
+
+    50% {
+        border-left-width: 1px;
+        border-top-width: 1px;
+        border-right-width: 5px;
+        border-bottom-width: 1px;
+    }
+
+    75% {
+        border-left-width: 1px;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 5px;
+    }
+
+    100% {
+        border-left-width: 5px;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+    }
+}
+
+
+
+
+
+img {
+    height: 100%;
+    max-width: 100%;
+}
+
+.seleccionado {
+    opacity: 0.2;
+    transition: all 0.5s ease;
+
+}
+
+
+#fin {
+    display: none;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: large;
+    width: 150px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    background-color: #3498db;
+    align-items: center;
+    color: aliceblue;
+    border: #004878 2px solid;
+    border-radius: 5%;
+    padding: 30px;
+    max-width: max-content;
+    max-height: 180px;
+}
+
+#secreta {
+    background-color: var(--violeta);
+    width: 100%;
+    height: 100%;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 250%;
+}
+
+#usadas {
+    background-color: var(--moradogris);
+    width: 100%;
+    height: 100%;
+    float: left;
+    font-size: 190%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: negro;
+
+}
+
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
